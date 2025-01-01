@@ -13,14 +13,14 @@ def BASE(request):
     }
     return render(request,'base.html',context)
 
-def HOME(request):
+def INDEX(request):
     category=Categories.objects.all().order_by('id')[0:5]
     course=Course.objects.filter(status='PUBLISH').order_by('id')
     context={
         'category':category,
         'course':course,
     }
-    return render(request,'Main/home.html',context)
+    return render(request,'Main/index.html',context)
 
 def SINGLE_COURSE(request):
     category=Categories.get_all_category(Categories)
@@ -157,5 +157,5 @@ def WATCH_COURSE(request,slug):
 def handlelogout(request):
     logout(request)
     messages.success(request,"Successfully Logged Out")
-    return redirect('home')
+    return redirect('index')
 

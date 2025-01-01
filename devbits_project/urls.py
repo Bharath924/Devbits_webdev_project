@@ -8,7 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('base/',views.BASE,name='base'),
     path('404',views.PAGE_NOT_FOUND,name='404'),
-    path('',views.HOME,name='home'),
+    path('',views.INDEX,name='index'),
     path('courses',views.SINGLE_COURSE,name='single_course'),
     path('courses/filter-data',views.filter_data,name="filter-data"),
     path('course/<slug:slug>',views.COURSE_DETAILS,name='course_details'),
